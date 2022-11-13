@@ -14,5 +14,5 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 const PORT = process.env.PORT || 5000
 app.listen(PORT, console.log(`Server started running in ${process.env.NODE_ENV} mode on port ${PORT}`))
-app.use('/api/task', kanbanroute)
-app.use("/api/register", authRoute)
+app.use('/api', kanbanroute)
+app.use("/api", authRoute)

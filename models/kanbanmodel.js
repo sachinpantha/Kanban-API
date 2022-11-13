@@ -4,6 +4,12 @@ const taskSchema = new Schema({
     Title: {
         type: String,
         required: [true, 'Title of task must be specified'],
+        unique: true
+    },
+    Priority: {
+        type: Number,
+        required: [true, 'Priority of task must be specified'],
+        unique: true
     },
     ToDo: {
         type: Boolean,

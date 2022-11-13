@@ -37,6 +37,7 @@ const addTask = async (req, res, next) => {
     try {
         let task = new Task({
             Title: req.body.Title,
+            Priority: req.body.Priority,
             ToDo: req.body.ToDo,
             Ongoing: req.body.Ongoing,
             Completed: req.body.Completed,
@@ -70,6 +71,7 @@ const addTask = async (req, res, next) => {
                 }
             })
         }
+
     }
     catch (err) {
         res.status(400).json({
@@ -87,6 +89,7 @@ const updateTask = async (req, res, next) => {
         const taskID = req.body.taskID
         const updatedData = {
             Title: req.body.Title,
+            Priority: req.body.Priority,
             ToDo: req.body.ToDo,
             Ongoing: req.body.Ongoing,
             Completed: req.body.Completed,
